@@ -31,10 +31,18 @@ java -jar bfg.jar --replace-text Passwords_to_replace.txt
 git push --force
 ```
 
-3. You can update also information that have been stored in the past, taking that info from a file.
-Passwords_to_replace.txt contains text you want to delete from Git history. Those strings will be replaced by `***REMOVED***` string.
+3. You can also delete files bigger than any size.
 
 ```bash
 java -jar bfg.jar --strip-blobs-bigger-than 10M
 git push --force
 ```
+
+> INFO:
+> If you have following message:
+> `Warning : no large blobs matching criteria found in packfiles - does > the repo need to be packed?`
+> You must type
+> ```bash
+> git gc
+> ```
+> 
