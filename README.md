@@ -19,5 +19,22 @@ curl https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar -o bfg.
 *If you're in repository, just use `./`*
 
 ```bash
-java -jar bfg.jar --delete-files {passwords,username}.txt Git-Test.git
+java -jar bfg.jar --delete-files "{passwords,username}.txt"
+git push --force
+```
+
+3. You can update also information that have been stored in the past, taking that info from a file.
+Passwords_to_replace.txt contains text you want to delete from Git history. Those strings will be replaced by `***REMOVED***` string.
+
+```bash
+java -jar bfg.jar --replace-text Passwords_to_replace.txt
+git push --force
+```
+
+3. You can update also information that have been stored in the past, taking that info from a file.
+Passwords_to_replace.txt contains text you want to delete from Git history. Those strings will be replaced by `***REMOVED***` string.
+
+```bash
+java -jar bfg.jar --strip-blobs-bigger-than 10M
+git push --force
 ```
