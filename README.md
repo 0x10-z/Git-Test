@@ -19,5 +19,5 @@ curl https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar -o bfg.
 *If you're in repository, just use `./`*
 
 ```bash
-java -jar bfg.jar --delete-files {passwords,usernames}.txt ./
+java -jar bfg.jar --delete-files {passwords,username}.txt Git-Test.git
 ```
